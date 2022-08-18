@@ -1,0 +1,5 @@
+train: C:\Users\srira\Documents\3rd YEAR\SIH FInal Assam\yolov5\yolov5\MDataset\train\images
+val: C:\Users\srira\Documents\3rd YEAR\SIH FInal Assam\yolov5\yolov5\MDataset\valid\images
+
+nc: 7
+names: ['Bottle','Bottle Cap',' HDPE','Cutlery','Wrapper',' Plastic_Bags','PlasticTubes']
