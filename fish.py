@@ -1,7 +1,7 @@
 import cv2
 
 # path
-path = r'D:\Users\Rajnish\Desktop\geeksforgeeks\.jpg'
+path = r'D:\hello\books\python\SUPDetection\test_img.jpg'
 
 # Reading an image in default mode
 image = cv2.imread(path)
