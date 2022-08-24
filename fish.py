@@ -11,11 +11,13 @@ window_name = 'Image'
 
 # Start coordinate, here (0, 0)
 # represents the top left corner of image
-start_point = (0, 0)
+print(image.shape)
+x,y = image.shape[0],image.shape[1]
+start_point = (x-1,0)
 
 # End coordinate, here (250, 250)
 # represents the bottom right corner of image
-end_point = (250, 250)
+end_point = (x-1,y)
 
 # Green color in BGR
 color = (0, 255, 0)
@@ -29,3 +31,6 @@ image = cv2.line(image, start_point, end_point, color, thickness)
 
 # Displaying the image
 cv2.imshow(window_name, image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
