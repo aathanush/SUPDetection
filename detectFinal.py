@@ -110,6 +110,7 @@ def run(
     model.warmup(imgsz=(1 if pt else bs, 3, *imgsz))  # warmup
     seen, windows, dt = 0, [], [0.0, 0.0, 0.0]
     for path, im, im0s, vid_cap, s in dataset:
+
         t1 = time_sync()
         im = torch.from_numpy(im).to(device)
         im = im.half() if model.fp16 else im.float()  # uint8 to fp16/32
@@ -169,7 +170,9 @@ def run(
                         c = int(cls)  # integer class
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
                         annotator.box_label(xyxy, label, color=colors(c, True))
+                        cv2.line(frame, (im0.shape[0],im0.shape[1]), (im0.shape[0],im0.shape[1]), colors(c, True), line_thickness)
                         label1 = label[:-5]
+
                         print(label1)
                         if label1 == "Bottle":
                                 counter[0] += 1

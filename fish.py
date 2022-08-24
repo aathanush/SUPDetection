@@ -13,11 +13,13 @@ window_name = 'Image'
 # represents the top left corner of image
 print(image.shape)
 x,y = image.shape[0],image.shape[1]
-start_point = (x-1,0)
+print(x)
+print(y)
+start_point = (1000,0)
 
 # End coordinate, here (250, 250)
 # represents the bottom right corner of image
-end_point = (x-1,y)
+end_point = (1000,y)
 
 # Green color in BGR
 color = (0, 255, 0)
