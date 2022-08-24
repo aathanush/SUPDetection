@@ -1,21 +1,31 @@
 import cv2
 
-cv2.namedWindow("preview")
-vc = cv2.VideoCapture(0)
+# path
+path = r'D:\Users\Rajnish\Desktop\geeksforgeeks\.jpg'
 
-if vc.isOpened(): # try to get the first frame
-    rval, frame = vc.read()
-else:
-    rval = False
+# Reading an image in default mode
+image = cv2.imread(path)
 
-while rval:
-    cv2.imshow("preview", frame)
-    rval, frame = vc.read()
-    key = cv2.waitKey(20)
+# Window name in which image is displayed
+window_name = 'Image'
 
-    if key == 27: # exit on ESC
-        break
-    else:
-        cv2.line(img= vc, pt1= 10, pt2= 50, color ='black',thickness = 1, lineType = 8, shift = 0)
-vc.release()
-cv2.destroyWindow("preview")
+# Start coordinate, here (0, 0)
+# represents the top left corner of image
+start_point = (0, 0)
+
+# End coordinate, here (250, 250)
+# represents the bottom right corner of image
+end_point = (250, 250)
+
+# Green color in BGR
+color = (0, 255, 0)
+
+# Line thickness of 9 px
+thickness = 9
+
+# Using cv2.line() method
+# Draw a diagonal green line with thickness of 9 px
+image = cv2.line(image, start_point, end_point, color, thickness)
+
+# Displaying the image
+cv2.imshow(window_name, image)
