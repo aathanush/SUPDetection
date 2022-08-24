@@ -182,6 +182,8 @@ def run(
                         if label1 == "Wrapper":
                                 counter[4] += 1
                         print(counter)
+                        print(xyxy)
+
 
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
